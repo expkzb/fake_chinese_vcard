@@ -47,6 +47,5 @@ if __name__ == "__main__":
     first_names = first_names()
     with open('demo.vcf', 'w') as f:
         for i in range(0, 2000):
-            (first_name, last_name, full_name) = generate_name(first_names, last_names)
-            vcard = generate_vcard(first_name, last_name, full_name) 
+            vcard = generate_vcard(*generate_name(first_names, last_names)) 
             f.write(vcard)
